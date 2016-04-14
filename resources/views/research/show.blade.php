@@ -8,9 +8,9 @@
 
 
 <div class="content">
-	<h2>Coaching in Leadership and Healthcare 2016: Poster Application</h2>
+	<h2>Coaching in Leadership and Healthcare 2016 Submissions</h2>
 
-	<p>Thank you for your research submission for consideration in the Coaching in Leadership and Healthcare 2016 conference, scheduled September 16-17, 2016.
+	<p>Thank you for your research submission(s) for consideration in the Coaching in Leadership and Healthcare 2016 conference, scheduled September 16-17, 2016.
 	Your submission is listed below. To make changes to your submission, select the button next to your entry and click the "Edit" button below.</p>
 
 		@if(count($errors)  > 0)
@@ -21,8 +21,9 @@
 		  </ul>
 		@endif
 
-<div id="flash_message"></div>
-
+		@if(Session::get('message') != null)
+					 <div class='flash_message'>{{ Session::get('message') }}</div>
+			 @endif
 
 		<!-- Form to gather user data -->
 

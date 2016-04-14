@@ -81,9 +81,10 @@ input[type="submit"]
           color : firebrick;
     }
 
-#flash_message  {
+.flash_message  {
       color: firebrick;
-      background: gray;
+      padding: .5em;
+      font-size: 1.2em;
 }
 
 .title

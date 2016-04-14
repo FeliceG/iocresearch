@@ -10,6 +10,10 @@
 
 <h3>Coaching in Leadership and Healthcare 2016: Poster Application</h3>
 
+@if(Session::get('message') != null)
+       <div class='flash_message'>{{ Session::get('message') }}</div>
+   @endif
+
 <p>Please provide information for the primary and secondary authors for your ressearch submission. Information for
 the Primary Author is required; Secondary Author information is optional.</p>
 <br>
@@ -22,7 +26,9 @@ the Primary Author is required; Secondary Author information is optional.</p>
   </ul>
 @endif
 
-<div id="flash_message"></div>
+@if(Session::get('message') != null)
+       <div class='flash_message'>{{ Session::get('message') }}</div>
+   @endif
 
 <!-- Form to gather user data -->
 

@@ -17,7 +17,9 @@
 		  </ul>
 		@endif
 
-<div id="flash_message"></div>
+		@if(Session::get('message') != null)
+	         <div class='flash_message'>{{ Session::get('message') }}</div>
+	     @endif
 
 
 		<!-- Form to gather user data -->

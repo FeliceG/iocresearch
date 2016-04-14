@@ -54,7 +54,7 @@ class IOCController extends Controller {
 
 		if ($count === 0)
 				{
-						\Session::flash('flash_message', 'You are being redirected to create a new submission.');
+						\Session::flash('message', 'You are being redirected to create a new submission.');
 						return view('research.add');
 				}
 		elseif ($count < 2)
@@ -69,7 +69,7 @@ class IOCController extends Controller {
 									return redirect('author/add')->with('research_id', $research[$i]['id']);
 									}
 								}
-							 \Session::flash('flash_message', 'You are being redirected to create a new submission.');
+							 \Session::flash('message', 'You are being redirected to create a new submission.');
 								return view('research/add');
 					}
 			else
@@ -77,7 +77,7 @@ class IOCController extends Controller {
 					$authors [] = \ioc\Author::where('research_id', '=', $research['0']->id)->get();
 					$authors [] = \ioc\Author::where('research_id', '=', $research['1']->id)->get();
 
-			 		\Session::flash("flash_message", "You have reached the two-entries as primary author limit. You are being redirected to show your submission.");
+			 		\Session::flash("message", "You have reached the 'two-entries' limit per primary author and have been redirected to your submissions.");
 			  	return redirect('research/show')->with(['research' => $research, 'authors' => $authors, 'count' => $count]);
 					}
  }
@@ -189,7 +189,7 @@ class IOCController extends Controller {
 				}
 			}
 
-	\Session::flash('flash_message', 'Primary and secondary authors added.');
+	\Session::flash('message', 'Primary and secondary authors added.');
 
 	$research = \ioc\Research::with('author')->find($request->research_id);
   session(['research' => $research]);
@@ -201,6 +201,7 @@ public function getShowResearch() {
 
 	$user = \Auth::user();
 
+	echo 'in getShowResearch';
 
 	if(is_null($user))
 		redirect ('/login');
@@ -210,7 +211,7 @@ public function getShowResearch() {
 
 					if ($count === 0)
 					{
-						\Session::flash('flash_message', 'ID for Research Not Found. You will be redirected to add a research submission.');
+						\Session::flash('message', 'ID for Research Not Found. You have been redirected to add a research submission.');
 						return redirect('research/add');
 					}
 					else
@@ -221,7 +222,7 @@ public function getShowResearch() {
 							$research_id =  $researches[$i]['id'];
 							if ($countAuthors === 0)
 									{
-										\Session::flash('flash_message', 'You will be redirected to add authors for this research submission.');
+										\Session::flash('message', 'You have been redirected to add authors for your research submission.');
 										return redirect('/authors/add')->with('research_id');
 									}
 								$authors[$i] = \ioc\Author::where('research_id', '=', $research_id)->get();
@@ -232,7 +233,6 @@ public function getShowResearch() {
 //						dump($authors);
 //						dump($count);
 
-				\Session::flash('flash_message', 'You have reached the "two-entries as primary" author limit. You are being redirected to show your submission.');
 
 				session(['researches' => $researches, 'authors' => $authors, 'count' => $count]);
 		  	return view('research.show')->with(['researches' => $researches, 'authors' => $authors, 'count' => $count]);
@@ -247,7 +247,7 @@ public function postShowResearch(Request $request) {
 		$countResearch = \ioc\Research::where('user_id', '=', $user->id)->count();
 		if ($countResearch === 0)
 		{
-			\Session::flash('flash_message', 'ID for Research Not Found. You will be redirected to add a research submission.');
+			\Session::flash('message', 'ID for Research Not Found. You have been redirected to add a research submission.');
 			return redirect('research/add');
 		}
 		else
@@ -259,7 +259,7 @@ public function postShowResearch(Request $request) {
 				if ($countAuthors === 0)
 						{
 							$research_id =  $researches[0][$i]['id'];
-							\Session::flash('flash_message', 'You will be redirected to add authors for this research submission.');
+							\Session::flash('message', 'You have been redirected to add authors for this research submission.');
 							return redirect('/authors/add')->with('research_id');
 						}
 			 }
@@ -285,7 +285,7 @@ public function getEditResearch(Request $request) {
 
 			if ($author->isEmpty())
 					{
-						\Session::flash('flash_message', 'ID for Research Not Found');
+						\Session::flash('message', 'ID for Research Not Found');
 						return redirect('/research/add');
 					}
 			else
@@ -295,7 +295,7 @@ public function getEditResearch(Request $request) {
 							session(['researches' => $researches, 'authors' => $authors]);
 							if ($researches->isEmpty())
 									{
-										\Session::flash('flash_message', 'ID for Research Not Found');
+										\Session::flash('message', 'ID for Research Not Found');
 										return redirect ('/research/add');
 									}
 					   }
@@ -309,7 +309,7 @@ public function getEditResearch(Request $request) {
 		$research = session('research');
 
 		if(is_null($request)) {
-		\Session::flash('flash_message', 'Research Entry Not Found');
+		\Session::flash('message', 'Research Entry Not Found');
 		return redirect('research/add');
 		}
 
@@ -381,7 +381,7 @@ public function getEditResearch(Request $request) {
 
 		if ($author->isEmpty())
 				{
-					\Session::flash('flash_message', 'No Research Entries Were Found to Delete. You will be redirected to add an entry.');
+					\Session::flash('message', 'No research entries found to delete. You have been redirected to add an entry.');
 					return redirect('research/add');
 				}
 		else
@@ -395,7 +395,7 @@ public function getEditResearch(Request $request) {
 						session(['researches' => $researches, 'authors' => $authors, 'count' => $count]);
 						if (is_null($researches))
 								{
-									\Session::flash('flash_message', 'ID for Research Not Found');
+									\Session::flash('message', 'ID for Research Not Found');
 									return redirect ('research/add');
 								}
 					 }
