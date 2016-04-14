@@ -1,0 +1,107 @@
+html, body
+      {
+        height: 100%;
+      }
+
+.container, .container img
+      {
+		      margin-left : 5em;
+          padding: 0;
+          font-weight: 100;
+          font-family: arial, sans-serif; font-size:12pt;
+		      width : 80%;
+          display: inline block;
+      }
+
+.container img
+                  {
+                    margin-left: -.1em;
+                  }
+
+.content
+      {
+      font-family: arial, sans-serif; font-size:11pt;
+      }
+
+nav  {
+      		font-size : 1.07em;
+      		background-color: #6699cc;
+      		font-weight: bold;
+      		padding: .001em;
+		  }
+
+nav ul li
+      {
+      		display: inline;
+      		padding: .3em;
+		  }
+
+nav ul li a
+      {
+      		color : #ffffff;
+      		text-decoration : none;
+		  }
+
+fieldset
+      {
+		      padding : .5em;
+          padding-left : 1em;
+          border : 1.25px solid firebrick;
+		  }
+
+      .morecontent span {
+          display: none;
+      }
+      .morelink {
+          display: block;
+      }
+
+.carousel-control
+      {
+      		padding-top:10%;
+      		width:5%;
+		  }
+
+
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .next        { left:  25%; }
+
+.image_container
+      {
+          display: table-cell;
+      }
+
+
+input[type="submit"]
+      {
+		      color : firebrick;
+		  }
+
+.red {
+          color : firebrick;
+    }
+
+#flash_message  {
+      color: firebrick;
+      background: gray;
+}
+
+.title
+      {
+		      margin-left: -39em;
+          font-size: .5em;
+      		font : firebrick;
+      		text-align: center;
+      }
+
+.bold
+      {
+        font-weight: bold;
+      }
+
+.footer
+      {
+      		font-size: .8em;
+      		color : #666666;
+      		text-align : center;
+	    }
