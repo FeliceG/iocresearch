@@ -45,6 +45,7 @@ class Research extends Model
 		$research->discussion = $request->discussion;
 		$research->impact = $request->impact;
 		$research->abstract = $request->abstract;
+		$research->poster = $request->poster;
 
 		$research->save();
 

@@ -17,10 +17,10 @@ class CreateAuthorsTable extends Migration
     	$table->increments('id');
     	$table->timestamps();
     	$table->string('first_name')->nullable();
-    	$table->string('last_name')->nullable();;
-    	$table->string('organization')->nullable();;
-    	$table->string('email')->nullable();;
-    	$table->string('type')->nullable();;
+    	$table->string('last_name')->nullable();
+    	$table->string('organization')->nullable();
+    	$table->string('email')->nullable();
+    	$table->string('type')->nullable();
       $table->integer('primary_count');
 	});
     }

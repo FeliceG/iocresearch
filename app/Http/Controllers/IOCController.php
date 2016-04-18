@@ -54,7 +54,7 @@ class IOCController extends Controller {
 
 		if ($count === 0)
 				{
-						\Session::flash('message', 'You are being redirected to create a new submission.');
+						\Session::flash('message', 'Thank you for participating in the Coaching Research Session. Please make a new submission by completing the form below.');
 						return view('research.add');
 				}
 		elseif ($count < 2)
@@ -111,6 +111,7 @@ class IOCController extends Controller {
 				$research->discussion = $request->discussion;
 				$research->impact = $request->impact;
 				$research->abstract = $request->abstract;
+				$research->poster = 0;
 
 				$research->save();
 
@@ -122,13 +123,16 @@ class IOCController extends Controller {
 	}
 
 	public function getCreateAuthors(Request $request) {
+
 		$user = \Auth::user();
-			$research_id =$request['researches']['research_id'];
+			$research_id =$request->research['id'];
+
 
 		if(is_null($user))
 			redirect ('/login');
 		else
 				session(['research_id' => $request->research_id]);
+
 
 				return view('authors/add')->with('research_id', $research_id);
 	}
@@ -162,11 +166,10 @@ class IOCController extends Controller {
 				 	$author->research_id = $request->research_id;
 					$author->type = "P";
 					$author->user_id = $user->id;
-					dump($author);
 					}
 				else
 					{
-
+											dump($author);
 					 $first = 'first' . $i;
 					 $author->first_name = $request->$first;
 
@@ -201,8 +204,6 @@ public function getShowResearch() {
 
 	$user = \Auth::user();
 
-	echo 'in getShowResearch';
-
 	if(is_null($user))
 		redirect ('/login');
 
@@ -229,11 +230,6 @@ public function getShowResearch() {
 						 }
 						}
 
-//						dump($researches);
-//						dump($authors);
-//						dump($count);
-
-
 				session(['researches' => $researches, 'authors' => $authors, 'count' => $count]);
 		  	return view('research.show')->with(['researches' => $researches, 'authors' => $authors, 'count' => $count]);
 }
@@ -255,19 +251,17 @@ public function postShowResearch(Request $request) {
 			for ($i=0; $i <= $countResearch; $i++)
 			{
 				$researches = \ioc\Research::where('user_id', '=', $user->id)->get();
-				$countAuthors = \ioc\Author::where('research_id', '=',  $researches[0][$i]['id'])->count();
+				$countAuthors = \ioc\Author::where('research_id', '=',  $researches[0]['id'])->count();
+
 				if ($countAuthors === 0)
 						{
-							$research_id =  $researches[0][$i]['id'];
+							$research_id =  $researches[0]['id'];
 							\Session::flash('message', 'You have been redirected to add authors for this research submission.');
-							return redirect('/authors/add')->with('research_id');
+						return redirect('/authors/add')->with('research_id');
 						}
+							$authors[$i] = \ioc\Author::where('research_id', '=', $researches[0]['id'])->get();
+				 }
 			 }
-
-							$research_id = $author[$i]->research_id;
-							$authors[$i] = \ioc\Author::where('research_id', '=', $research_id)->get();
-							$researches[$i] = \ioc\Research::where('id', '=', $research_id)->get();
-				}
 
 	session(['researches' => $researches, 'authors' => $authors]);
 	return redirect('/research/edit')->with(['researches' => $researches, 'authors' => $authors]);
@@ -324,13 +318,13 @@ public function getEditResearch(Request $request) {
 					'abstract'  => 'required|min:40'
 			 ]
 		);
-
+		
 			//Code to enter edited research paper or poster data into database table
 			$research = \ioc\Research::find($request->research_id);
 			$research->type = $request->paper_poster;
 			$research->track = $request->track;
 			$research->title = $request->title;
-			$research->user_id =  $user->id;
+			$research->user_id = \Auth::id();
 			$research->background = $request->background;
 			$research->findings = $request->findings;
 			$research->design = $request->design;
