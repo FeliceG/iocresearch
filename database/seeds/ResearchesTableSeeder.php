@@ -14,12 +14,14 @@ class ResearchesTableSeeder extends Seeder
         //
     $faker = \Faker\Factory::create();
 
-        for ($i=1; $i < 13; $i++)
+        for ($i=1; $i < 11; $i++)
         {
         DB::table('researches')->insert([
         'created_at'  => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at'  => Carbon\Carbon::now()->toDateTimeString(),
         'type'        => 'paper',
+        'track'       => 'health',
+        'user_id'     => $i,
         'title'       => $faker->text($maxNbChars = 200),
         'background'  => $faker->text($maxNbChars = 500),
         'design'      => $faker->text($maxNbChars = 500),
@@ -27,6 +29,7 @@ class ResearchesTableSeeder extends Seeder
         'discussion'  => $faker->text($maxNbChars = 500),
         'impact'      => $faker->text($maxNbChars = 500),
         'abstract'    => $faker->text($maxNbChars = 500),
+        'poster'      => 0
          ]);
         }
      }

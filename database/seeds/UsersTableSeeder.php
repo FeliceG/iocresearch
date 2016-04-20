@@ -11,18 +11,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-          $user = \ioc\User::firstOrCreate(['email' => 'jill@harvard.edu']);
-          $user->name = 'Jill';
-          $user->email = 'jill@harvard.edu';
-          $user->password = \Hash::make('helloworld');
-          $user->save();
-
-          $user = \ioc\User::firstOrCreate(['email' => 'jamal@harvard.edu']);
-          $user->name = 'Jamal';
-          $user->email = 'jamal@harvard.edu';
-          $user->password = \Hash::make('helloworld');
-          $user->save();
-
 
           $faker = \Faker\Factory::create();
 
@@ -30,7 +18,9 @@ class UsersTableSeeder extends Seeder
           {
             $fake_email = $faker->safeEmail;
             $user = \ioc\User::firstOrCreate(['email' => $fake_email]);
-            $user->name = $faker->firstName;
+            $user->first = $faker->firstName;
+            $user->last = $faker->lastName;
+            $user->organization = $faker->company;
             $user->email = $fake_email;
             $user->password = \Hash::make('helloworld');
             $user->save();

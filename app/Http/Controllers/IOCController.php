@@ -84,6 +84,12 @@ class IOCController extends Controller {
 
 	public function postCreateResearch(Request $request) {
 
+		$user = \Auth::user();
+
+		if(is_null($user))
+			redirect ('/login');
+
+
 		$this->validate(
 		   $request,
 		   [
@@ -103,7 +109,7 @@ class IOCController extends Controller {
 				$research->type = $request->type;
 				$research->track = $request->track;
 				$research->title = $request->title;
-				$research->user_id = \Auth::id();
+				$research->user_id = $user->id;
 				$research->background = $request->background;
 				$research->findings = $request->findings;
 				$research->design = $request->design;
@@ -168,7 +174,6 @@ class IOCController extends Controller {
 					}
 				else
 					{
-											dump($author);
 					 $first = 'first' . $i;
 					 $author->first_name = $request->$first;
 
@@ -334,6 +339,7 @@ public function getEditResearch(Request $request) {
 			$research->discussion = $request->discussion;
 			$research->impact = $request->impact;
 			$research->abstract = $request->abstract;
+			$research->poster = 0;
 			$research->save();
 
 			for($i= '1'; $i < 5; $i++)

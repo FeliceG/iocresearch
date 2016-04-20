@@ -14,7 +14,7 @@ class AuthorsTableSeeder extends Seeder
         //
       $faker = \Faker\Factory::create();
 
-        for ($i=1; $i < 13; $i++)
+        for ($i=1; $i < 11; $i++)
         {
         for ($n=0; $n < 2; $n++) {
         DB::table('authors')->insert([
@@ -25,7 +25,9 @@ class AuthorsTableSeeder extends Seeder
         'organization' => $faker->company,
         'email'       => $faker->safeEmail,
         'type'        => 'S',
-	      'research_id' => $i
+        'primary_count' => '1',
+        'research_id' => $i,
+        'user_id'     => $i
          ]);
         }
       }
