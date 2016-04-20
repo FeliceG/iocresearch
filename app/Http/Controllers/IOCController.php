@@ -69,8 +69,7 @@ class IOCController extends Controller {
 									return redirect('author/add')->with('research_id', $research[$i]['id']);
 									}
 								}
-							 \Session::flash('message', 'You are being redirected to create a new submission.');
-								return view('research/add');
+							return view('research.add');
 					}
 			else
 					{
@@ -101,7 +100,7 @@ class IOCController extends Controller {
 
 		//Code to enter research paper or poster into database table
 				$research = new \ioc\Research();
-				$research->type = $request->paper_poster;
+				$research->type = $request->type;
 				$research->track = $request->track;
 				$research->title = $request->title;
 				$research->user_id = \Auth::id();
@@ -300,6 +299,10 @@ public function getEditResearch(Request $request) {
 
 	public function postEditResearch(Request $request) {
 
+		$user = \Auth::user();
+		if(is_null($user))
+			redirect ('/login');
+
 		$research = session('research');
 
 		if(is_null($request)) {
@@ -318,10 +321,10 @@ public function getEditResearch(Request $request) {
 					'abstract'  => 'required|min:40'
 			 ]
 		);
-		
+
 			//Code to enter edited research paper or poster data into database table
 			$research = \ioc\Research::find($request->research_id);
-			$research->type = $request->paper_poster;
+			$research->type = $request->type;
 			$research->track = $request->track;
 			$research->title = $request->title;
 			$research->user_id = \Auth::id();

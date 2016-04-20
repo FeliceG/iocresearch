@@ -52,4 +52,5 @@ class Research extends Model
 		return $research;
 
 	}
+	
 }

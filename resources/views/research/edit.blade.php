@@ -36,9 +36,9 @@
 
 				<br>
 						<legend>Research Information</legend>
-						<p>Please indicate if you are submitting a <span class="bold">PAPER</span> or <span class="bold">POSTER</span>:   <select form="researchEdit_form" name="paper_poster" value="{{ $research->paper_poster }}">
-									      <option value="paper">PAPER</option>
-									      <option value="poster">POSTER</option>
+						<p>Please indicate if you are submitting a <span class="bold">PAPER</span> or <span class="bold">POSTER</span>:   <select form="researchEdit_form" name="type" value="{{ $research->type }}">
+									      <option value="PAPER">PAPER</option>
+									      <option value="POSTER">POSTER</option>
 											           </select>
 						<br>
 						<p>Indicate the track for which you would like your paper/poster to be considered:   <select form="research_form" name="track" value="{{ $research->track }}">
