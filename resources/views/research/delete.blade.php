@@ -45,11 +45,10 @@
 											<span class="bold">Design and Methods:</span> {{ $researches[$i]['0']->design }} <br>
 											<span class="bold">Findings:</span> {{ $researches[$i]['0']->findings }} <br>
 											<span class="bold">Discussion:</span> {{ $researches[$i]['0']->discussion }} <br>
-											<span class="bold">Impact on Coaching Practice: </span>{{ $researches[$i]['0']->impact }} <<br>
 											<span class="bold">Abstract:</span> {{ $researches[$i]['0']->abstract }} <br>
 							<br>
 													<legend><span class="bold">Authors</span></legend>
-																			@for ($n = 0; $n < 4; $n++)
+																			@for ($n = 0; $n < 5; $n++)
 																			<span class="bold">Name:</span> {{ $authors[$i][$n]->first_name }} {{ $authors[$i][$n]->last_name }}<br>
 																			<span class="bold">Organization:</span> {{ $authors[$i][$n]->organization }}<br>
 																			<span class="bold">Email:</span> {{ $authors[$i][$n]->email }}<br>

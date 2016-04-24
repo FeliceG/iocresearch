@@ -16,7 +16,7 @@ class Research extends Model
 		return $this->belongsTo('\ioc\User');
 	}
 
-
+	
 
 	public function getResearch()  {
 
@@ -43,7 +43,6 @@ class Research extends Model
 		$research->findings = $request->findings;
 		$research->design = $request->design;
 		$research->discussion = $request->discussion;
-		$research->impact = $request->impact;
 		$research->abstract = $request->abstract;
 		$research->poster = $request->poster;
 
@@ -52,5 +51,5 @@ class Research extends Model
 		return $research;
 
 	}
-	
+
 }

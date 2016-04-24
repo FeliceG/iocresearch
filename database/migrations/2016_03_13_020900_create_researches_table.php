@@ -23,7 +23,6 @@ class CreateResearchesTable extends Migration
 	$table->text('design');
 	$table->text('findings');
 	$table->text('discussion');
-	$table->text('impact');
 	$table->text('abstract');
   $table->binary('poster');
 	});

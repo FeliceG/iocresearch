@@ -34,8 +34,6 @@
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href='/eligibility'>Eligibility</a></li>
                         <li><a href='/guidelines'>Guidelines</a></li>
-<!--                    <li><a href='/poster'>Past Posters</a></li>
-                        <li><a href='/paper'>Past Papers</a></li>     -->
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
@@ -43,8 +41,6 @@
                         <li><a href='/guidelines'>Guidelines</a></li>
                         <li><a href='/research/add'>Submit Entry</a></li>
                         <li><a href='/research/show'>Show/Edit Entry</a></li>
-    <!--                <li><a href='/research/edit'>Edit Submission</a></li>
-                        <li><a href='/authors/edit'>Edit Authors</a></li>    -->
                         <li><a href='/research/delete'>Delete Entry</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

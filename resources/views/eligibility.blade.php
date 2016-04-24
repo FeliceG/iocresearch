@@ -30,6 +30,7 @@
       		<li class="bold">Submissions that promote commercial interests or that feature proprietary materials will not be accepted.</li>
       		<li>Presenting authors of all accepted papers and posters <span class="bold">must register and pay the conference registration fee. Authors of accepted papers must
           register by August 19, 2016 to be included in the conference program.</span></li>
+          <li>Posters will not be considered for poster awards or be displayed without at least one author registered and in attendace at the conference.
       	</ul>
 
 	  <h2>Poster Competition</h2>
@@ -39,12 +40,12 @@
 	  <p>The Primary Author of the Best Poster award receives:</p>
 
     	<ol>
-    		<li>One-year complementary Affiliate Membership in the ICPA.</li>
+    		<li>One-year complementary Affiliate Membership in the Institute of Coaching.</li>
     		<li>Up to $1000 travel and accommodation reimbursement for the current conference. (Travel must meet the Partners guidelines for reimbursement.)</li>
     		<li>Complementary registration to next year's Coaching Conference.</li>
     		<li>A commemorative award.</li>
     	</ol>
-      <p class="indent">The first author of the two Honorable Mention awards will receive a one year complementary Affiliate Memership in the IOC.</p>
+      <p class="indent">The first author of the two Honorable Mention awards will receive a one year complementary Affiliate Membership in the IOC.</p>
 
 </div>
 @stop

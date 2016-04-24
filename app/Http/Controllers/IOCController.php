@@ -93,13 +93,14 @@ class IOCController extends Controller {
 		$this->validate(
 		   $request,
 		   [
-					'title' => 'required|min:10',
-					'background' => 'required|min:20',
-					'design' => 'required|min:20',
-					'discussion'  => 'required|min:20',
-					'findings'  => 'required|min:20',
-					'impact'  => 'required|min:20',
-					'abstract'  => 'required|min:20'
+					'type' => 'required|in:POSTER,PAPER',
+					'track' => 'required|in:leader,health,both',
+					'title' => 'required|between:10,200',
+					'background' => 'required|between:100,600',
+					'design' => 'required|between:100,600',
+					'discussion'  => 'required|between:100,600',
+					'findings'  => 'required|between:100,600',
+					'abstract'  => 'required|between:100,850'
 		   ]
 		);
 
@@ -114,7 +115,6 @@ class IOCController extends Controller {
 				$research->findings = $request->findings;
 				$research->design = $request->design;
 				$research->discussion = $request->discussion;
-				$research->impact = $request->impact;
 				$research->abstract = $request->abstract;
 				$research->poster = 0;
 
@@ -130,8 +130,7 @@ class IOCController extends Controller {
 	public function getCreateAuthors(Request $request) {
 
 		$user = \Auth::user();
-			$research_id =$request->research['id'];
-
+			$research_id = $request->research_id;
 
 		if(is_null($user))
 			redirect ('/login');
@@ -159,7 +158,7 @@ class IOCController extends Controller {
 
 		if ($author == 0)
 		{
-				for($i=1; $i < 5; $i++)
+				for($i=1; $i < 6; $i++)
 				{
 				$author = new \ioc\Author();
 				if($i == '1')
@@ -228,7 +227,7 @@ public function getShowResearch() {
 							if ($countAuthors === 0)
 									{
 										\Session::flash('message', 'You have been redirected to add authors for your research submission.');
-										return redirect('/authors/add')->with('research_id');
+										return redirect('/authors/add')->with('research_id', $research_id);
 									}
 								$authors[$i] = \ioc\Author::where('research_id', '=', $research_id)->get();
 						 }
@@ -244,7 +243,9 @@ public function postShowResearch(Request $request) {
 	if(is_null($user))
 		redirect ('/login');
 
-		$countResearch = \ioc\Research::where('user_id', '=', $user->id)->count();
+	$research_id =  $request->research_id;
+
+		$countResearch = \ioc\Research::where('id', '=', $research_id)->count();
 		if ($countResearch === 0)
 		{
 			\Session::flash('message', 'ID for Research Not Found. You have been redirected to add a research submission.');
@@ -252,53 +253,52 @@ public function postShowResearch(Request $request) {
 		}
 		else
 		{
-			for ($i=0; $i <= $countResearch; $i++)
-			{
-				$researches = \ioc\Research::where('user_id', '=', $user->id)->get();
-				$countAuthors = \ioc\Author::where('research_id', '=',  $researches[0]['id'])->count();
+				$researches = \ioc\Research::where('id', '=', $research_id)->get();
+				$countAuthors = \ioc\Author::where('research_id', '=',  $research_id)->count();
 
 				if ($countAuthors === 0)
 						{
-							$research_id =  $researches[0]['id'];
 							\Session::flash('message', 'You have been redirected to add authors for this research submission.');
-						return redirect('/authors/add')->with('research_id');
+						return redirect('/authors/add')->with('research_id', $research_id);
 						}
-							$authors[$i] = \ioc\Author::where('research_id', '=', $researches[0]['id'])->get();
-				 }
+							$authors = \ioc\Author::where('research_id', '=', $research_id)->get();
 			 }
 
-	session(['researches' => $researches, 'authors' => $authors]);
-	return redirect('/research/edit')->with(['researches' => $researches, 'authors' => $authors]);
+	session(['research_id' => $research_id]);
+	return redirect('/research/edit')->with('research_id', $research_id);
 }
 
 
 public function getEditResearch(Request $request) {
 
-			$user = \Auth::user();
-			if(is_null($user))
-				redirect ('/login');
+	$user = \Auth::user();
+	if(is_null($user))
+		redirect ('/login');
 
-			$count = \ioc\Author::where('email', '=', $user->email)->count();
-			$author = \ioc\Author::where('email', '=', $user->email)->get();
+		$research_id =  $request->session()->get('research_id');
 
-			if ($author->isEmpty())
-					{
-						\Session::flash('message', 'ID for Research Not Found');
-						return redirect('/research/add');
-					}
-			else
+		$countResearch = \ioc\Research::where('id', '=', $research_id)->count();
+
+		if ($countResearch === 0)
+		{
+			\Session::flash('message', 'ID for Research Not Found. You have been redirected to add a research submission.');
+		return redirect('research/add');
+		}
+		else
+		{
+				$researches = \ioc\Research::where('id', '=', $research_id)->get();
+				$countAuthors = \ioc\Author::where('research_id', '=',  $research_id)->count();
+
+				if ($countAuthors === 0)
 						{
-							$authors = \ioc\Author::where('research_id', '=', $author['0']['research_id'])->get();
-							$researches = \ioc\Research::where('id', '=', $author['0']['research_id'])->get();
-							session(['researches' => $researches, 'authors' => $authors]);
-							if ($researches->isEmpty())
-									{
-										\Session::flash('message', 'ID for Research Not Found');
-										return redirect ('/research/add');
-									}
-					   }
+							\Session::flash('message', 'You have been redirected to add authors for this research submission.');
+						return redirect('/authors/add')->with('research_id', $research_id);
+						}
+							$authors = \ioc\Author::where('research_id', '=', $research_id)->get();
+			 }
 
-			return view('research.edit')->with(['researches' => $researches, 'authors' => $authors]);
+	session(['researches' => $researches, 'authors' => $authors]);
+	return view('research.edit')->with(['researches' => $researches, 'authors' => $authors]);
 }
 
 
@@ -318,12 +318,15 @@ public function getEditResearch(Request $request) {
 		$this->validate(
 			 $request,
 			 [
-					'title' => 'required|min:10',
-					'background' => 'required|min:40',
-					'design' => 'required|min:40',
-					'discussion'  => 'required|min:40',
-					'impact'  => 'required|min:40',
-					'abstract'  => 'required|min:40'
+				 'type' => 'required|in:POSTER,PAPER',
+				 'track' => 'required|in:leader,health,both',
+				 'title' => 'required|between:10,200',
+				 'background' => 'required|between:100,500',
+				 'design' => 'required|between:100,500',
+				 'discussion'  => 'required|between:100,500',
+				 'findings'  => 'required|between:100,500',
+				 'abstract'  => 'required|between:100,750'
+
 			 ]
 		);
 
@@ -337,12 +340,11 @@ public function getEditResearch(Request $request) {
 			$research->findings = $request->findings;
 			$research->design = $request->design;
 			$research->discussion = $request->discussion;
-			$research->impact = $request->impact;
 			$research->abstract = $request->abstract;
 			$research->poster = 0;
 			$research->save();
 
-			for($i= '1'; $i < 5; $i++)
+			for($i= '1'; $i < 6; $i++)
 				{
 					$id = 'id' . $i;
 					if (!is_null($request->$id))
@@ -420,7 +422,7 @@ return view('research/delete')->with(['researches' => $researches, 'authors' => 
 				$authors->delete();
 				$submission->delete();
 
-		return view('research.add');
+		return view('research.show')->with('message', "Your selected research entry was deleted.");
 	}
 
 

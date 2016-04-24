@@ -24,18 +24,17 @@
                         <li>Life Coaching</li>
                         <li>Other relevant fields</li>
                       </ul>
-                      <p>We invite submissions of proposals for:</p>
+                      <p>We invite submissions proposals for:</p>
                     <ul>
                     	<li><span class="bold">Oral Paper Presentations:</span> Accepted papers will be presented in oral sessions according to themes.</li>
                     	<li><span class="bold">Posters:</span> Accepted posters will be arranged in an exhibit during the poster session offering
                         opportunities to interact with authors and audience.</li>
                     </ul>
-                  	<p class="bold" class="line">Additional Information</p>
+                  	<p><span class="bold" class="line">Additional Information</span></br>
+                    To submit a poster or paper, <span class="bold">please <a href="/register">register</a> to create an account. Once registered, you will be redirected to the submission form.</span></p>
 
-                    <h5>To submit a poster or paper, please <a href="/register">register</a> to create an account. Once registered, you will be redirected to the submission form.</h5>
-
-                    <p class="bold" class="line">Deadline</p>
-                    <p>The deadline for the receipt of completed online paper and poster applications is
+                    <p><span class="bold" class="line">Deadline</span></br>
+                    The deadline for the receipt of completed online paper and poster applications is
                       <span class="bold" class="red"> Monday, June 6, 2016 by 11:59 PM EDT.</span></p>
 
 

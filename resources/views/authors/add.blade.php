@@ -191,6 +191,45 @@ the Primary Author is required; Secondary Author information is optional.</p>
       value='{{ old('email4', '') }}' >&nbsp;&nbsp;&nbsp;
 </fieldset>
 <br>
+
+<fieldset>
+  <legend>Secondary Author Four</legend>
+    <label>*First Name:</label>
+    <input type="text"
+      form="authorform"
+      id="first5"
+      name="first5"
+      placeholder="First Name"
+      value='{{ old('first5', '') }}'>&nbsp;&nbsp;&nbsp;
+
+  <label>*Last Name:</label>
+    <input type="text"
+      form="authorform"
+      id="last_name5"
+      name="last5"
+      size="35"
+      placeholder="Last Name"
+      value='{{ old('last5', '') }}'>&nbsp;&nbsp;&nbsp;
+<br>
+  <label>*Organization:</label>
+    <input type="text"
+      form="authorform"
+        id="organization5"
+        name="organization5"
+        size="55"
+        placeholder="Institutional Affiliation"
+        value='{{ old('organization5', '') }}'>&nbsp;&nbsp;&nbsp;
+
+  <label>*Email:</label>
+    <input type="email"
+      form="authorform"
+      id="email5"
+      name="email5"
+      size="35"
+      placeholder="Email"
+      value='{{ old('email5', '') }}' >&nbsp;&nbsp;&nbsp;
+</fieldset>
+<br>
             <input id="submit-btn" type ="submit" value="SUBMIT">
             </form>
             <br>
