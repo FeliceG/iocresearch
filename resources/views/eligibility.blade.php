@@ -30,7 +30,7 @@
       		<li class="bold">Submissions that promote commercial interests or that feature proprietary materials will not be accepted.</li>
       		<li>Presenting authors of all accepted papers and posters <span class="bold">must register and pay the conference registration fee. Authors of accepted papers must
           register by August 19, 2016 to be included in the conference program.</span></li>
-          <li>Posters will not be considered for poster awards or be displayed without at least one author registered and in attendace at the conference.
+          <li>Posters will not be considered for poster awards or be displayed without at least one author <a href="http://tiny.cc/harvardcoaching" target="_blank">registered for the conference</a> and in attendace at the conference.
       	</ul>
 
 	  <h2>Poster Competition</h2>

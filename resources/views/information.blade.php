@@ -5,7 +5,7 @@
                 <h3>Information</h3>
 
                 <p>Presentations of research on all aspects of Coaching are invited for the ninth annual
-                  "Coaching in Leadership and Healthcare: Theory, Practice and Results" Conference. The
+                  <a href="http://tiny.cc/harvardcoaching" target="_blank">Coaching in Leadership and Healthcare: Theory, Practice and Results Conference</a>. The
                   conference is organized by the Institute of Coaching, McLean Hospital, and Harvard Medical School
                    on September 16-17, 2016 at <a href="http://www.marriott.com/hotels/travel/boswf-renaissance-boston-waterfront-hotel/" target="_blank">
                   The Renaissance Boston Waterfront Hotel</a>, Boston, MA.</p>
@@ -42,9 +42,10 @@
                     <li>The Scientific Advisory Council of the Institute of Coaching will review all paper and poster submissions and select those to be presented at the conference as well
                       as the winners of the Best Poster Competition and Honorary Mention winners.</li>
                     <li class="bold">Submissions that promote commercial interests or that feature proprietary materials will not be accepted.</li>
-                    <li>Presenting authors of all accepted papers and posters <span class="bold">must register and pay the conference registration fee. Authors of accepted papers
+                    <li>Presenting authors of all accepted papers and posters <span class="bold"><a href="http://tiny.cc/harvardcoaching" target="_blank">must register and pay the conference registration fee.</a> Authors of accepted papers
                     must register by August 19, 2016 to be included in the conference program.<span></li>
-                    <li>Posters will not be considered for poster awards or be displayed without at least one author registered and in attendance at the conference.</li>
+                    <li>Posters will not be considered for poster awards or be displayed without at least one author <a href="http://tiny.cc/harvardcoaching" target="_blank">registered to attend the conference</a>
+                      and in attendance at the conference.</li>
                 </ul>
 
 
