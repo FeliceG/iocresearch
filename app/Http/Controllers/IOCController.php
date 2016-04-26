@@ -422,7 +422,9 @@ return view('research/delete')->with(['researches' => $researches, 'authors' => 
 				$authors->delete();
 				$submission->delete();
 
-		return view('research.show')->with('message', "Your selected research entry was deleted.");
+				\Session::flash('message', 'Your selected research entry was deleted.');
+
+		return view('research.show');
 	}
 
 

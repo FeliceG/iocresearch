@@ -41,7 +41,7 @@ Once you submit your research, you will be directed to a form to provide informa
 						<fieldset>
 						<legend>Research Information</legend></br>
 						<span class="bold">*Please indicate</span> if you are submitting a <span class="bold">PAPER</span> or <span class="bold">POSTER</span>:
-						<select form="research_form" name="type" value='{{ old(research->type), ''}}'>
+						<select form="research_form" name="type" value='{{ old('type') }}'>
 									      <option value=''>SELECT PAPER OR POSTER</option>
 												<option value="PAPER">PAPER</option>
 												<option value="POSTER">POSTER</option>
@@ -49,11 +49,11 @@ Once you submit your research, you will be directed to a form to provide informa
 						<br>
 						<br>
 						<span class="bold">*Indicate the track</span> for which you would like your paper/poster to be considered:<br>
-						<select form="research_form" name="track" value='{{old(research->track), ''}}'>
+						<select form="research_form" name="track" value='{{old('track') }}'>
 									      <option value=''>SELECT A TRACK</option>
-												<option value="leader">Leadership and Organizational Coaching--September 16, 2016</option>
-                		  	<option value="health">Health, Healthcare and Wellbeing Coaching--September 17, 2016</option>
-												<option value="both">Both Sessions--Leadership on September 16 or Healthcare on September 17, 2016</option>
+												<option value="leader" >Leadership and Organizational Coaching--September 16, 2016</option>
+                		  	<option value="health" >Health, Healthcare and Wellbeing Coaching--September 17, 2016</option>
+												<option value="both" >Both Sessions--Leadership on September 16 or Healthcare on September 17, 2016</option>
 						</select>
 						<br>
 						<br>
