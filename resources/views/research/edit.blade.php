@@ -93,14 +93,14 @@
 										id="first"
 										name="<?php echo 'first' . $i ?>"
 										placeholder="First Name"
-										value='{{ $author->first_name }}'>&nbsp;&nbsp;&nbsp;
+										value='{{ $author->first_name }}'>&nbsp;&nbsp;&nbsp;  >
 								<label>*Last Name:</label>
 									<input type="text"
 										form="researchEdit_form"
 										id="last"
 										name="<?php echo 'last' . $i ?>"
 										placeholder="Last Name"
-										value='{{ $author->last_name }}'>&nbsp;&nbsp;
+										value='{{ $author->last_name }}'>&nbsp;&nbsp;  >
 										<br>
 								<label>*Organization</label>
 									<input type="text"
@@ -109,7 +109,7 @@
 										name="<?php echo 'organization' . $i ?>"
 										placeholder="Institutional Affiliation"
 										size="45"
-										value='{{ $author->organization }}' >&nbsp;&nbsp;
+										value='{{ $author->organization }}' >&nbsp;&nbsp;  >
 
 								@if ($i === 1)
 								 <label>*Email: &nbsp;</label> {{ $author->email }}
@@ -119,7 +119,7 @@
 										name="<?php echo 'email' . $i ?>"
 										size="30"
 										placeholder="Email"
-										value='{{ $author->email }}' >&nbsp;&nbsp;
+										value='{{ $author->email }}' >&nbsp;&nbsp;  >
 									@else
 									<label>* Email</label>
  									<input type="email"
@@ -128,7 +128,7 @@
  										name="<?php echo 'email' . $i ?>"
  										size="30"
  										placeholder="Email"
- 										value='{{ $author->email }}' >&nbsp;&nbsp;
+ 										value='{{ $author->email }}' >&nbsp;&nbsp;  >
 									@endif
 
  										<input type="hidden"
@@ -136,6 +136,7 @@
  											name="<?php echo 'id' . $i ?>"
  											placeholder="First Name"
  											value='{{ $author->id }}'>
+
 							</fieldset>
 						<br>
 						@endforeach

@@ -56,7 +56,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
             name="last1"
             placeholder="Last Name"
             size="40"
-            value='{{ Auth::user()->last }}'>&nbsp;&nbsp;
+            value='{{ Auth::user()->last }}'>&nbsp;&nbsp; >
 
         <label>Organization: &nbsp; </label>{{ Auth::user()->organization }}
           <input type="hidden"
@@ -65,7 +65,8 @@ the Primary Author is required; Secondary Author information is optional.</p>
             name="organization1"
             placeholder="Institutional Affiliation"
             size="45"
-            value='{{ Auth::user()->organization }}' >&nbsp;&nbsp;
+            value='{{ Auth::user()->organization }}' >&nbsp;&nbsp; >
+
          <label>Email: &nbsp; </label>{{ Auth::user()->email }}
           <input type="hidden"
             form="authorform"
@@ -73,7 +74,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
             name="email1"
             size="30"
             placeholder="Email"
-            value='{{ Auth::user()->email }}' >&nbsp;&nbsp;
+            value='{{ Auth::user()->email }}' >&nbsp;&nbsp; >
     </fieldset>
 <br>
 <fieldset>
@@ -84,7 +85,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       id="first2"
       name="first2"
       placeholder="First Name"
-      value='{{ old('first2', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('first2', '') }}'>&nbsp;&nbsp;&nbsp; >
 
   <label>*Last Name:</label>
     <input type="text"
@@ -93,7 +94,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="last2"
       size="35"
       placeholder="Last Name"
-      value='{{ old('last2', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('last2', '') }}'>&nbsp;&nbsp;&nbsp; >
 <br>
   <label>*Organization:</label>
     <input type="text"
@@ -102,7 +103,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
         name="organization2"
         size="55"
         placeholder="Institutional Affiliation"
-        value='{{ old('organization2', '') }}'>&nbsp;&nbsp;&nbsp;
+        value='{{ old('organization2', '') }}'>&nbsp;&nbsp;&nbsp; >
 
   <label>*Email:</label>
     <input type="email"
@@ -111,7 +112,8 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="email2"
       size="35"
       placeholder="Email"
-      value='{{ old('email2', '') }}' >&nbsp;&nbsp;&nbsp;
+      value='{{ old('email2', '') }}' >&nbsp;&nbsp;&nbsp;>
+
 </fieldset>
 <br>
 <fieldset>
@@ -122,7 +124,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       id="first3"
       name="first3"
       placeholder="First Name"
-      value='{{ old('first3', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('first3', '') }}'>&nbsp;&nbsp;&nbsp; >
 
   <label>*Last Name:</label>
     <input type="text"
@@ -131,7 +133,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="last3"
       size="35"
       placeholder="Last Name"
-      value='{{ old('last3', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('last3', '') }}'>&nbsp;&nbsp;&nbsp;  >
 <br>
   <label>*Organization:</label>
     <input type="text"
@@ -140,7 +142,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
         name="organization3"
         size="55"
         placeholder="Institutional Affiliation"
-        value='{{ old('organization3', '') }}'>&nbsp;&nbsp;&nbsp;
+        value='{{ old('organization3', '') }}'>&nbsp;&nbsp;&nbsp;  >
 
   <label>*Email:</label>
     <input type="email"
@@ -149,7 +151,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="email3"
       size="35"
       placeholder="Email"
-      value='{{ old('email3', '') }}' >&nbsp;&nbsp;&nbsp;
+      value='{{ old('email3', '') }}' >&nbsp;&nbsp;&nbsp;  >
 </fieldset>
 <br>
 
@@ -161,7 +163,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       id="first4"
       name="first4"
       placeholder="First Name"
-      value='{{ old('first4', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('first4', '') }}'>&nbsp;&nbsp;&nbsp;  >
 
   <label>*Last Name:</label>
     <input type="text"
@@ -170,7 +172,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="last4"
       size="35"
       placeholder="Last Name"
-      value='{{ old('last4', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('last4', '') }}'>&nbsp;&nbsp;&nbsp;  >
 <br>
   <label>*Organization:</label>
     <input type="text"
@@ -179,7 +181,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
         name="organization4"
         size="55"
         placeholder="Institutional Affiliation"
-        value='{{ old('organization4', '') }}'>&nbsp;&nbsp;&nbsp;
+        value='{{ old('organization4', '') }}'>&nbsp;&nbsp;&nbsp;  >
 
   <label>*Email:</label>
     <input type="email"
@@ -188,7 +190,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="email4"
       size="35"
       placeholder="Email"
-      value='{{ old('email4', '') }}' >&nbsp;&nbsp;&nbsp;
+      value='{{ old('email4', '') }}' >&nbsp;&nbsp;&nbsp;  >
 </fieldset>
 <br>
 
@@ -200,7 +202,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       id="first5"
       name="first5"
       placeholder="First Name"
-      value='{{ old('first5', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('first5', '') }}'>&nbsp;&nbsp;&nbsp;  >
 
   <label>*Last Name:</label>
     <input type="text"
@@ -209,7 +211,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="last5"
       size="35"
       placeholder="Last Name"
-      value='{{ old('last5', '') }}'>&nbsp;&nbsp;&nbsp;
+      value='{{ old('last5', '') }}'>&nbsp;&nbsp;&nbsp;  >
 <br>
   <label>*Organization:</label>
     <input type="text"
@@ -218,7 +220,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
         name="organization5"
         size="55"
         placeholder="Institutional Affiliation"
-        value='{{ old('organization5', '') }}'>&nbsp;&nbsp;&nbsp;
+        value='{{ old('organization5', '') }}'>&nbsp;&nbsp;&nbsp;  >
 
   <label>*Email:</label>
     <input type="email"
@@ -227,7 +229,7 @@ the Primary Author is required; Secondary Author information is optional.</p>
       name="email5"
       size="35"
       placeholder="Email"
-      value='{{ old('email5', '') }}' >&nbsp;&nbsp;&nbsp;
+      value='{{ old('email5', '') }}' >&nbsp;&nbsp;&nbsp;  >
 </fieldset>
 <br>
             <input id="submit-btn" type ="submit" value="SUBMIT">
