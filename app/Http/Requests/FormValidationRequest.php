@@ -46,8 +46,8 @@ class FormValidationRequest extends Request
             'background.required' => 'Background is a required field with a minimum of 20 and maximum of 100 words.',
             'design.required' => 'Design is a required field with a minimum of 20 and maximum of 100 words.',
             'discussion.required'  => 'Discussion is a required field with a minimum of 20 and maximum of 100 words.',
-            'findings.required'  => 'Findings is a required field with a minimum of 20 and maximum of 100 words..',
-            'abstract.required'  => 'Abstract is a required field with a minimum of 20 and maximum of 100 words..'
+            'findings.required'  => 'Findings is a required field with a minimum of 20 and maximum of 100 words.',
+            'abstract.required'  => 'Abstract is a required field with a minimum of 20 and maximum of 100 words.'
         ];
 
     }
