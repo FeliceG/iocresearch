@@ -5,10 +5,13 @@ namespace ioc\Http\Controllers;
 use DB;
 use Auth;
 use Session;
+use Validator;
 
-use ioc\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use ioc\Http\Controllers\Controller;
+use ioc\Http\Requests\FormValidationRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\MessageBag;
 
 class IOCController extends Controller {
 
@@ -82,27 +85,12 @@ class IOCController extends Controller {
  }
 
 
-	public function postCreateResearch(Request $request) {
+	public function postCreateResearch(FormValidationRequest $request) {
 
 		$user = \Auth::user();
 
 		if(is_null($user))
 			redirect ('/login');
-
-
-		$this->validate(
-		   $request,
-		   [
-					'type' => 'required|in:POSTER,PAPER',
-					'track' => 'required|in:leader,health,both',
-					'title' => 'required|between:10,200',
-					'background' => 'required|between:100,600',
-					'design' => 'required|between:100,600',
-					'discussion'  => 'required|between:100,600',
-					'findings'  => 'required|between:100,600',
-					'abstract'  => 'required|between:100,850'
-		   ]
-		);
 
 
 		//Code to enter research paper or poster into database table
@@ -302,7 +290,7 @@ public function getEditResearch(Request $request) {
 }
 
 
-	public function postEditResearch(Request $request) {
+	public function postEditResearch(FormValidationRequest $request) {
 
 		$user = \Auth::user();
 		if(is_null($user))
@@ -315,21 +303,7 @@ public function getEditResearch(Request $request) {
 		return redirect('research/add');
 		}
 
-		$this->validate(
-			 $request,
-			 [
-				 'type' => 'required|in:POSTER,PAPER',
-				 'track' => 'required|in:leader,health,both',
-				 'title' => 'required|between:10,200',
-				 'background' => 'required|between:100,500',
-				 'design' => 'required|between:100,500',
-				 'discussion'  => 'required|between:100,500',
-				 'findings'  => 'required|between:100,500',
-				 'abstract'  => 'required|between:100,750'
-
-			 ]
-		);
-
+	
 			//Code to enter edited research paper or poster data into database table
 			$research = \ioc\Research::find($request->research_id);
 			$research->type = $request->type;

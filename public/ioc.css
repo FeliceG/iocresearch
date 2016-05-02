@@ -23,6 +23,11 @@ html, body
       font-family: arial, sans-serif; font-size:11pt;
       }
 
+.highlight
+      {
+        background-color: yellow;
+      }
+
 nav  {
       		font-size : 1.07em;
       		background-color: #6699cc;

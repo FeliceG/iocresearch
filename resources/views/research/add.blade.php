@@ -7,28 +7,29 @@
 
 <div class="content">
 	<p>Please provide information for your research submission (paper or poster) for consideration in the Coaching in
-		Leadership and Healthcare 2016 conference. To make a submission, please</ br>
+		Leadership and Healthcare 2016 conference. To make a submission, please review the information below and complete
+		the research form.</ br>
 		<ol>
 			<li class="bold">All "*" fields are required to submit the form.</li>
 			<li class="bold">Do not use the back button to return to a previous page.</li>
 			<li>Select either <span class="red">"PAPER"</span> or <span class="red">"POSTER"</span> for your submission.</li>
 			<li>Title field has a maximum of 40 words.</li>
 			<li>All other fields, except Abstract, have a minimum of 20 words and maximum of 100 words.</li>
-			<li>The Abstract field has a minimum of 20 words and maximum of 150 words.</li>
+			<li><span class="highlight">The Abstract field.</span></li>
 		</ol>
+
 Once you submit your research, you will be directed to a form to provide information on up to 5 authors.</p>
 
-
 		@if(count($errors)  > 0)
-		  <ul>
-		      @foreach ($errors->all() as $error)
-		        <li class="bold"><span class="red">{{ $error }}</span></li>
+				@foreach($errors->all() as $error )
+							<ul>
+							  <li class="bold"><span class="red">	{{ $error }} </span></li>
+					  	</ul>
 		      @endforeach
-		  </ul>
 		@endif
 
-		@if(Session::get('message') != null)
-	         <div class='flash_message'>{{ Session::get('message') }}</div>
+		@if(Session::get('error') != null)
+	         <div class='flash_message'>{{ Session::get('error') }}</div>
 	     @endif
 		<!-- Form to gather user data -->
 
@@ -61,7 +62,7 @@ Once you submit your research, you will be directed to a form to provide informa
 						<input type="text" form="research_form" name="title" id="title" size="114" placeholder="Please enter a title" value='{{ old('title') }}' ><br>
 
 						<br>
-						<span class="bold">*Background and Objectives</span><br>
+						<span class="bold" class="highlight">*Background and Objectives</span><br>
 						<textarea rows="5" cols="117" name="background" id="background" form="research_form" placeholder="Please provide information in 100 words or less." value='{{ old('background') }}' >{{ old('background') }}</textarea><br>
 
 						<br>

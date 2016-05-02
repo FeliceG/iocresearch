@@ -8,7 +8,7 @@
 
   <h1>Eligibility</h1>
 
-	   <p>The research sessions are held to exchange information, ideas, and latest research results in the field of coaching. Papers and posters need to be relevant to the following areas:</p>
+	   <p>The research sessions are held to exchange information, ideas, and latest research results in the field of coaching. Papers and posters need to be <span class="highlight">relevant</span> in the following areas:</p>
     	   <ul>
         		<li>Leadership Coaching</li>
         		<li>Health and Wellness Coaching</li>
@@ -28,9 +28,9 @@
       		<li>The study must have followed the standards of ethics in research with human beings and obtained appropriate ethical approval if it is an empirical study.</li>
       		<li>The Scientific Advisory Council of the Institute of Coaching will review all paper and poster submissions and select those to be presented at the conference as well as the winners of the Best Poster Competition and Honorary Mention winners.</li>
       		<li class="bold">Submissions that promote commercial interests or that feature proprietary materials will not be accepted.</li>
-      		<li>Presenting authors of all accepted papers and posters <span class="bold">must register and pay the conference registration fee. Authors of accepted papers must
+      		<li>Presenting authors of all accepted papers and posters <a href="http://tiny.cc/harvardcoaching" target="_blank">must register and pay the conference registration fee</a>. Authors of accepted papers must
           register by August 19, 2016 to be included in the conference program.</span></li>
-          <li>Posters will not be considered for poster awards or be displayed without at least one author <a href="http://tiny.cc/harvardcoaching" target="_blank">registered for the conference</a> and in attendace at the conference.
+          <li>Posters will not be considered for poster awards or be displayed without at least one author registered for the conference and in attendace at the conference.
       	</ul>
 
 	  <h2>Poster Competition</h2>
