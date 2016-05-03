@@ -36,7 +36,7 @@
                       institutions, or are graduate students and other professionals with doctoral level mentors.</li>
                     <li>Empirical research should be completed or well under way rather than at the beginning stages. It must include analyses and a summary of findings. Stating
                       &#34;the data will be analyzed&#34; or &#34;findings will be presented/discussed&#34; is not sufficient research to submit for either the poster or paper presentation.</li>
-                    <li>The submission cannot <span class="highlight">have been</span> presented at any previous Institute of Coaching conference.</li>
+                    <li>The submission cannot have been presented at any previous Institute of Coaching conference.</li>
                     <li>The submission cannot have been previously published.</li>
                     <li>The study must have followed the standards of ethics in research with human beings and obtained appropriate ethical approval if it is an empirical study.</li>
                     <li>The Scientific Advisory Council of the Institute of Coaching will review all paper and poster submissions and select those to be presented at the conference as well

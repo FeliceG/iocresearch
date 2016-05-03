@@ -15,7 +15,7 @@
                   	<p class="bold" class="line">Types of Submissions</p>
 
                   	<p>The research sessions are held to exchange information, ideas, and latest research results in the
-                      field of coaching. Papers and posters need to be <span class="highlight">relevant</span> in the following areas:</p>
+                      field of coaching. Papers and posters need to be relevant in the following areas:</p>
 
                       <ul>
                         <li>Leadership Coaching</li>

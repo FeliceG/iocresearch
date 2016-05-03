@@ -15,7 +15,7 @@
 			<li>Select either <span class="red">"PAPER"</span> or <span class="red">"POSTER"</span> for your submission.</li>
 			<li>Title field has a maximum of 40 words.</li>
 			<li>All other fields, except Abstract, have a minimum of 20 words and maximum of 100 words.</li>
-			<li><span class="highlight">The Abstract field.</span></li>
+			<li>The Abstract field.</li>
 		</ol>
 
 Once you submit your research, you will be directed to a form to provide information on up to 5 authors.</p>

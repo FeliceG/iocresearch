@@ -32,7 +32,7 @@
   <li>Description of study design and procedures;</li>
   <li>Quality of statistical and/or qualitative analysis &#40;or of theoretical discussion if conceptual paper&#41;;</li>
   <li>Contribution to coaching theory, research, and/or practice;</li>
-  <li>Visual presentation <span class="highlight">(for posters);</span></li>
+  <li>Visual presentation (for posters);</li>
   <li>Potential to publish.</li>
 </ul>
 
