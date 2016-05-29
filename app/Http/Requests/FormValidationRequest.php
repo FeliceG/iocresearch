@@ -24,31 +24,16 @@ class FormValidationRequest extends Request
      */
     public function rules()
     {
-        return [
-            'type' => 'required|in:POSTER,PAPER',
-            'track' => 'required|in:leader,health,both',
-            'title' => 'required|between:10,200',
-            'background' => 'required|between:100,600',
-            'design' => 'required|between:100,600',
-            'discussion'  => 'required|between:100,600',
-            'findings'  => 'required|between:100,600',
-            'abstract'  => 'required|between:100,850',
-          ];
-    }
-
-
-    public function messages()
-    {
-        return [
-            'type.required' => 'Select either POSTER or PAPER submission type.',
-            'track.required'  => 'Select a track to present your research.',
-            'title.required' => 'Provide a title for your research.',
-            'background.required' => 'Background is a required field with a minimum of 20 and maximum of 100 words.',
-            'design.required' => 'Design is a required field with a minimum of 20 and maximum of 100 words.',
-            'discussion.required'  => 'Discussion is a required field with a minimum of 20 and maximum of 100 words.',
-            'findings.required'  => 'Findings is a required field with a minimum of 20 and maximum of 100 words.',
-            'abstract.required'  => 'Abstract is a required field with a minimum of 20 and maximum of 100 words.'
+      return [
+          'type' => 'required|in:POSTER,PAPER',
+          'track' => 'required|in:leader,health,both',
+          'title' => 'required|between:10,300',
+          'background' => 'required|between:100,800',
+          'design' => 'required|between:100,800',
+          'discussion'  => 'required|between:100,800',
+          'findings'  => 'required|between:100,800',
+          'abstract'  => 'required|between:100,1100',
         ];
-
     }
+
 }

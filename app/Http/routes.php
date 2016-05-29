@@ -21,6 +21,8 @@ Route::get('/home', function () {
     return view('home');
 });
 
+Route::get('/mail', 'IOCController@getMail');
+
 Route::get('/eligibility', function () {
     return view('eligibility');
 });

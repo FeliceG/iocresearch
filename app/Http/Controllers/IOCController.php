@@ -3,6 +3,7 @@
 namespace ioc\Http\Controllers;
 
 use DB;
+use Mail;
 use Auth;
 use Session;
 use Validator;
@@ -11,7 +12,7 @@ use Illuminate\Http\Request;
 use ioc\Http\Controllers\Controller;
 use ioc\Http\Requests\FormValidationRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\MessageBag;
+
 
 class IOCController extends Controller {
 
@@ -34,6 +35,15 @@ class IOCController extends Controller {
 
 	public function getPaper() {
 		return view('paper');
+	}
+
+	public function getMail() {
+		\Mail::send([], [], function($message)  {
+		    $message->to('felice.gardner@gmail.com')
+		            ->subject('Hello World')
+		            ->setBody('This is a test message; Testing 123');
+		});
+		return 'Basic, plain text email sent.';
 	}
 
 	public function getGuidelines() {
@@ -303,7 +313,7 @@ public function getEditResearch(Request $request) {
 		return redirect('research/add');
 		}
 
-	
+
 			//Code to enter edited research paper or poster data into database table
 			$research = \ioc\Research::find($request->research_id);
 			$research->type = $request->type;

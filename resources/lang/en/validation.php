@@ -77,6 +77,8 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'url'                  => 'The :attribute format is invalid.',
 
+
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -88,11 +90,35 @@ return [
     |
     */
 
+
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'type' => [
+            'required' => 'Select either POSTER or PAPER submission type.',
         ],
-    ],
+        'track' => [
+            'required' => 'Select a track to present your research.',
+        ],
+        'title' => [
+            'between' => 'Provide a title for your research.',
+        ],
+        'background' => [
+            'between' => 'Background is a required field with a minimum of 20 and maximum of 100 words.',
+        ],
+        'design' => [
+            'between' => 'Design is a required field with a minimum of 20 and maximum of 100 words.',
+        ],
+        'discussion' => [
+            'between' => 'Discussion is a required field with a minimum of 20 and maximum of 100 words.',
+        ],
+        'findings' => [
+            'between' => 'Findings is a required field with a minimum of 20 and maximum of 100 words.',
+        ],
+        'abstract' => [
+            'between' => 'Abstract is a required field with a minimum of 20 and maximum of 150 words.',
+        ],
+  ],
+
+
 
     /*
     |--------------------------------------------------------------------------
