@@ -10,7 +10,7 @@
 
 <ul>
 <li>Papers and posters can describe original empirical research, meta-analyses, and theoretical discussions.</li>
-<li><span class="bold">The deadline</span> for the receipt of all applications online is Monday, June 6, 2016 by 11:59 PM EDT. Decisions will be announced by  Friday, July 1, 2016.</li>
+<li><span class="bold">The deadline</span> for the receipt of all applications online has been extended to Monday, June 13, 2016 by 11:59 PM EDT. Decisions will be announced by  Friday, July 1, 2016.</li>
 <li>Author(s) details can include up to five authors. The first author is the presenting author.</li>
 <li><span class="bold">Title</span> - up to 30 words</li>
 <li><span class="bold">Abstracts</span> for publication in the Conference program are up to 150 words</li>

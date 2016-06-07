@@ -50,7 +50,7 @@
 
 
               	<p class="bold" class="line">Deadline Information</p>
-                  <p>The deadline for the receipt of paper and poster applications online is <span class="bold" class="red"> Monday, June 6, 2016 by 11:59 PM EDT.</span></p>
+                  <p>The deadline for the receipt of paper and poster applications online has been extended to <span class="bold" class="red"> Monday, June 13, 2016 by 11:59 PM EDT.</span></p>
                   <p>Decisions will be announced by <span class="bold" class="red"> Friday, July 1, 2016 EDT.</span></p>
 
                 </div>

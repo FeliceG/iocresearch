@@ -21,8 +21,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/mail', 'IOCController@getMail');
-
 Route::get('/eligibility', function () {
     return view('eligibility');
 });
@@ -33,10 +31,6 @@ Route::get('/guidelines', function () {
 
 Route::get('/paper', function () {
     return view('paper');
-});
-
-Route::get('/poster', function () {
-    return view('poster');
 });
 
 
